@@ -1143,7 +1143,7 @@ extension DropDown {
 	public override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
 		let view = super.hitTest(point, with: event)
 
-		if dismissMode == .automatic && view === dismissableView {
+        if dismissMode == .automatic && view === dismissableView && event != nil {
 			cancel()
 			return nil
 		} else {
